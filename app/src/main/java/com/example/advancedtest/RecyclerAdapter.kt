@@ -8,8 +8,8 @@ import kotlinx.android.synthetic.main.item_recycler.view.*
 import java.text.SimpleDateFormat
 
 class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.Holder>() {
-    var helper: SQLiteHelper? = null
-    var listData = mutableListOf<Memo>()
+    var helper: RoomHelper? = null
+    var listData = mutableListOf<RoomMemo>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
         val view = LayoutInflater.from(parent.context)
@@ -23,24 +23,24 @@ class RecyclerAdapter: RecyclerView.Adapter<RecyclerAdapter.Holder>() {
 
     override fun onBindViewHolder(holder: Holder, position: Int) {
         val memo = listData.get(position)
-        holder.setMemo(memo)
+        holder.setRoomMemo(memo)
     }
 
     inner class Holder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        var selectedMemo: Memo? = null
+        var selectedRoomMemo: RoomMemo? = null
         init{
-            itemView.deleteMemoBtn.setOnClickListener {
-                helper?.deleteMemo((selectedMemo!!))
-                listData.remove(selectedMemo)
+            itemView.deleteRoomMemoBtn.setOnClickListener {
+                helper?.roomMemoDao()?.delete(selectedRoomMemo!!)
+                listData.remove(selectedRoomMemo)
                 notifyDataSetChanged()
             }
         }
-        fun setMemo(memo:Memo){
+        fun setRoomMemo(memo:RoomMemo){
             itemView.memoNo.text = "${memo.no}"
             itemView.memoContent.text = memo.content
             val sdf = SimpleDateFormat("yyyy/MM/dd hh:mm")
             itemView.memoDatetime.text = "${sdf.format(memo.datetime)}"
-            this.selectedMemo = memo
+            this.selectedRoomMemo = memo
         }
     }
 }

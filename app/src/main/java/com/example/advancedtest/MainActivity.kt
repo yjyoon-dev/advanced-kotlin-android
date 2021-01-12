@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         openSQL.setOnClickListener {
-            val intent = Intent(this,SQLiteActivity::class.java)
+            val intent = Intent(this,RoomActivity::class.java)
             startActivity(intent)
         }
     }

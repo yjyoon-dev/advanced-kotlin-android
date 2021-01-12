@@ -12,8 +12,8 @@ class SQLiteHelper(context: Context, name:String, version: Int):
     SQLiteOpenHelper(context,name,null,version){
     override fun onCreate(db: SQLiteDatabase?) {
         val create = "CREATE TABLE memo ("+
-                "no INTEGER PRIMARY KEY,"+
-                "content TEXT"+
+                "no INTEGER PRIMARY KEY, "+
+                "content TEXT, "+
                 "datetime INTEGER"+
                 ")"
         db?.execSQL(create)
@@ -35,7 +35,7 @@ class SQLiteHelper(context: Context, name:String, version: Int):
 
     fun selectMemo(): MutableList<Memo> {
         val list = mutableListOf<Memo>()
-        val select = "SELECT * FROM memo"
+        val select = "select * from memo"
         val rd = readableDatabase
         val cursor = rd.rawQuery(select,null)
         while(cursor.moveToNext()){
