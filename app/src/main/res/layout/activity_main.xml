@@ -11,5 +11,17 @@
         android:id="@+id/openSQL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SQLite memo" />
+        android:text="Room Memo Database " />
+
+    <Button
+        android:id="@+id/openTimerBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="timer" />
+
+    <Button
+        android:id="@+id/openAsyncBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="asynctask" />
 </LinearLayout>

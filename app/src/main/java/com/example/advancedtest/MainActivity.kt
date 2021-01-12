@@ -13,5 +13,14 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,RoomActivity::class.java)
             startActivity(intent)
         }
+        openTimerBtn.setOnClickListener {
+            val intent = Intent(this,TimerActivity::class.java)
+            startActivity(intent)
+        }
+
+        openAsyncBtn.setOnClickListener {
+            val intent = Intent(this,AsynctaskActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
