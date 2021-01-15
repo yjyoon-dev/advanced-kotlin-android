@@ -22,5 +22,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,AsynctaskActivity::class.java)
             startActivity(intent)
         }
+
+        openContentResolver.setOnClickListener {
+            val intent = Intent(this,ContentResolverActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
