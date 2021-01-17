@@ -27,5 +27,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,ContentResolverActivity::class.java)
             startActivity(intent)
         }
+
+        openUrlConnectBtn.setOnClickListener {
+            val intent = Intent(this,UrlConnectActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

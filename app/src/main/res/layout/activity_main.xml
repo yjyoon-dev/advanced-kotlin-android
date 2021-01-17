@@ -31,4 +31,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Content resolver" />
+
+    <Button
+        android:id="@+id/openUrlConnectBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="url connection" />
 </LinearLayout>
