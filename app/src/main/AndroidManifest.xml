@@ -4,7 +4,6 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -13,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AdvancedTest">
-        <activity android:name=".UrlConnectActivity"></activity>
+        <activity android:name=".NetworkRetrofit" />
+        <activity android:name=".UrlConnectActivity" />
         <activity android:name=".ContentResolverActivity" />
         <activity android:name=".AsynctaskActivity" />
         <activity android:name=".TimerActivity" />

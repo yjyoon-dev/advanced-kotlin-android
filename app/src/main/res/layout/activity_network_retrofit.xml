@@ -4,48 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UrlConnectActivity">
+    tools:context=".NetworkRetrofit">
 
-    <EditText
-        android:id="@+id/urlText"
+    <Button
+        android:id="@+id/getGithubInfoBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:hint="please input URL"
-        android:inputType="text"
-        app:layout_constraintEnd_toStartOf="@+id/urlConnectBtn"
+        android:text="GitHub 코틀린 Repository 가져오기"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/urlConnectBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Request"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ScrollView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/githubRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/urlConnectBtn">
-
-        <TextView
-            android:id="@+id/websiteText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="website code here" />
-    </ScrollView>
-
+        app:layout_constraintTop_toBottomOf="@+id/getGithubInfoBtn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

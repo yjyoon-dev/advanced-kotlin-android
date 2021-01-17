@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
+import retrofit2.Retrofit
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,6 +31,11 @@ class MainActivity : AppCompatActivity() {
 
         openUrlConnectBtn.setOnClickListener {
             val intent = Intent(this,UrlConnectActivity::class.java)
+            startActivity(intent)
+        }
+
+        openRetrofitBtn.setOnClickListener {
+            val intent = Intent(this,NetworkRetrofit::class.java)
             startActivity(intent)
         }
     }
